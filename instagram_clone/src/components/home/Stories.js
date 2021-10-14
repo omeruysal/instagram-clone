@@ -11,10 +11,16 @@ const Stories = () => {
         data={USERS}
         renderItem={({item}) => <Story data={item} />}
       />
+      <View style={styles.line}></View>
     </View>
   );
 };
 
 export default Stories;
 
-const styles = StyleSheet.create({});
+const styles = StyleSheet.create({
+  line: {
+    borderBottomColor: 'grey',
+    borderWidth: 0.5,
+  },
+});

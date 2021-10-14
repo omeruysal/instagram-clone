@@ -1,5 +1,5 @@
 import React from 'react';
-import {SafeAreaView, StyleSheet, Text, View} from 'react-native';
+import {SafeAreaView, ScrollView, StyleSheet, Text, View} from 'react-native';
 import Header from '../components/home/Header';
 import Posts from '../components/home/post/Posts';
 import Stories from '../components/home/Stories';
@@ -8,8 +8,10 @@ const HomeScreen = () => {
   return (
     <SafeAreaView style={styles.container}>
       <Header />
-      <Stories />
-      <Posts />
+      <ScrollView>
+        <Stories />
+        <Posts />
+      </ScrollView>
     </SafeAreaView>
   );
 };

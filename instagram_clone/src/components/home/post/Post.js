@@ -5,12 +5,12 @@ import Posts from './Posts';
 import PostImage from './PostImage';
 import PostFooter from './PostFooter';
 
-const Post = props => {
+const Post = ({post}) => {
   return (
-    <View>
-      <PostHeader />
-      <PostImage />
-      <PostFooter />
+    <View style={styles.container}>
+      <PostHeader username={post.user} image={post.profilePicture} />
+      <PostImage img={post.imageUrl} />
+      <PostFooter post={post} />
     </View>
   );
 };
@@ -18,6 +18,7 @@ const Post = props => {
 export default Post;
 
 const styles = StyleSheet.create({
+  container: {marginTop: 10},
   text: {
     color: 'white',
   },

@@ -22,7 +22,7 @@ export const POSTS = [
     imageUrl: 'https://cdn.webrazzi.com/uploads/2020/05/facebook-35.jpeg',
     user: USERS[4].user,
     likes: 12,
-    caption: 'This is my caption bro',
+    caption: 'Guess who I am',
     profilePicture: USERS[4].image,
     comments: [
       {

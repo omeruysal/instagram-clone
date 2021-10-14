@@ -6,7 +6,9 @@ import {POSTS} from '../../../data/PostsData';
 const Posts = () => {
   return (
     <View>
-      <FlatList data={POSTS} renderItem={({item}) => <Post data={item} />} />
+      {POSTS.map((post, index) => (
+        <Post post={post} key={index} />
+      ))}
     </View>
   );
 };
