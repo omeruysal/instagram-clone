@@ -2,7 +2,7 @@ import React from 'react';
 import {Image, StyleSheet, Text, TouchableOpacity, View} from 'react-native';
 import Icon from 'react-native-vector-icons/Entypo';
 
-const PostHeader = ({username, image}) => {
+const PostHeader = ({username, image, setOption}) => {
   return (
     <View style={styles.container}>
       <View style={styles.leftCell}>
@@ -23,7 +23,11 @@ const PostHeader = ({username, image}) => {
           </View>
         </TouchableOpacity>
       </View>
-      <TouchableOpacity style={styles.button}>
+      <TouchableOpacity
+        style={styles.button}
+        onPress={() => {
+          setOption(pre => !pre);
+        }}>
         <View style={styles.icon}>
           <Icon name={'dots-three-horizontal'} color={'white'} size={25} />
         </View>

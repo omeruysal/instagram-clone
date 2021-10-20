@@ -20,7 +20,6 @@ export default PostImage;
 const styles = StyleSheet.create({
   image: {
     height: 350,
-    marginTop: 10,
     resizeMode: 'contain',
   },
 });

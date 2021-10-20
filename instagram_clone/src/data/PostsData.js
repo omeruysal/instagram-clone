@@ -2,7 +2,7 @@ import {USERS} from './UsersData';
 export const POSTS = [
   {
     imageUrl:
-      'https://pix8.agoda.net/hotelImages/361/3612581/3612581_18010316150060733791.jpg?s=1024x768',
+      'https://images.pexels.com/photos/1557652/pexels-photo-1557652.jpeg?auto=compress&cs=tinysrgb&dpr=1&w=500',
     user: USERS[0].user,
     likes: 485,
     caption: 'This is my caption bro',
