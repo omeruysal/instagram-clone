@@ -1,3 +1,4 @@
+import {useNavigation} from '@react-navigation/native';
 import React from 'react';
 import {
   SafeAreaView,
@@ -9,11 +10,15 @@ import {
 import Icon from 'react-native-vector-icons/MaterialIcons';
 
 const Header = () => {
+  const navigation = useNavigation();
   return (
     <SafeAreaView styles={styles.container}>
       <View style={styles.innerContainer}>
         <View style={styles.icon}>
-          <TouchableOpacity>
+          <TouchableOpacity
+            onPress={() => {
+              navigation.navigate('HomeScreen');
+            }}>
             <Icon name={'arrow-back-ios'} size={25} color={'white'} />
           </TouchableOpacity>
         </View>

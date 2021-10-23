@@ -1,9 +1,11 @@
+import {useNavigation} from '@react-navigation/native';
 import React from 'react';
 import {StyleSheet, Text, View, Image, TouchableOpacity} from 'react-native';
 import Icon from 'react-native-vector-icons/FontAwesome';
 import MessengerIcon from 'react-native-vector-icons/Fontisto';
 
 const Header = () => {
+  const navigation = useNavigation();
   return (
     <View style={styles.container}>
       <View>
@@ -16,7 +18,10 @@ const Header = () => {
       </View>
       <View style={styles.iconsContainer}>
         <View style={styles.icon}>
-          <TouchableOpacity>
+          <TouchableOpacity
+            onPress={() => {
+              navigation.navigate('NewPostScreen');
+            }}>
             <Icon size={25} name={'plus-square-o'} color={'white'} />
           </TouchableOpacity>
         </View>

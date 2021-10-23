@@ -2,6 +2,8 @@ import React, {useState} from 'react';
 import {StyleSheet, Text, TextInput, View, Image, Button} from 'react-native';
 import * as Yup from 'yup';
 import {Formik} from 'formik';
+import {useNavigation} from '@react-navigation/native';
+import validurl from 'valid-url';
 
 const uploadPostSchema = Yup.object().shape({
   imageUrl: Yup.string().url().required('A URL is mandatory'),
@@ -9,13 +11,17 @@ const uploadPostSchema = Yup.object().shape({
 });
 
 const PostUploader = () => {
+  const navigation = useNavigation();
   const [thumbnailUrl, setThumbnailUrl] = useState();
   const PLACE_HOLDER_URL = 'https://i.stack.imgur.com/y9DpT.jpg';
   return (
     <View style={{margin: 20}}>
       <Formik
         initialValues={{caption: '', imageUrl: ''}}
-        onSubmit={v => console.log(v)}
+        onSubmit={v => {
+          console.log(v);
+          navigation.goBack();
+        }}
         validateOnMount={true}
         validationSchema={uploadPostSchema}>
         {({
@@ -32,7 +38,9 @@ const PostUploader = () => {
                 <Image
                   style={styles.image}
                   source={{
-                    uri: PLACE_HOLDER_URL,
+                    uri: validurl.isUri(thumbnailUrl)
+                      ? thumbnailUrl
+                      : PLACE_HOLDER_URL,
                   }}
                 />
                 <TextInput
@@ -47,6 +55,7 @@ const PostUploader = () => {
               </View>
               <View style={styles.divider}></View>
               <TextInput
+                onChange={e => setThumbnailUrl(e.nativeEvent.text)}
                 placeholder="Enter image URL"
                 placeholderTextColor="gray"
                 style={{color: 'white'}}

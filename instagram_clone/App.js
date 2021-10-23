@@ -1,10 +1,9 @@
 import React from 'react';
 import {SafeAreaView, StyleSheet, Text, View} from 'react-native';
-import HomeScreen from './src/screens/HomeScreen';
-import NewPost from './src/screens/NewPost';
+import SignedInStack from './src/navigation/navigation';
 
 const App = () => {
-  return <NewPost />;
+  return <SignedInStack />;
 };
 
 const styles = StyleSheet.create({});
