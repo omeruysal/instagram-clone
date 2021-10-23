@@ -1,9 +1,9 @@
 import React from 'react';
 import {SafeAreaView, ScrollView, StyleSheet, Text, View} from 'react-native';
 import BottomTabs from '../components/BottomTabs';
-import Header from '../components/home/Header';
+import Header from '../components/Header';
 import Posts from '../components/home/post/Posts';
-import Stories from '../components/home/Stories';
+import Stories from '../components/Stories';
 
 const HomeScreen = () => {
   return (
@@ -12,8 +12,8 @@ const HomeScreen = () => {
       <ScrollView>
         <Stories />
         <Posts />
-        <BottomTabs />
       </ScrollView>
+      <BottomTabs />
     </SafeAreaView>
   );
 };

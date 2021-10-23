@@ -10,7 +10,7 @@ const Header = () => {
         <TouchableOpacity>
           <Image
             style={styles.logo}
-            source={require('../../assets/images/logoWhite.png')}
+            source={require('../../src/assets/images/logoWhite.png')}
           />
         </TouchableOpacity>
       </View>
