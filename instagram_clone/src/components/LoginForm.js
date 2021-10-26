@@ -12,7 +12,6 @@ import {Formik} from 'formik';
 import * as Yup from 'yup';
 import Validator from 'email-validator';
 import {useNavigation} from '@react-navigation/native';
-import firebase from '../firebase';
 
 const LoginForm = () => {
   const navigation = useNavigation();
